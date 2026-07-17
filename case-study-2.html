@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gym Healthcare Fitness System — UI/UX Case Study by Lokesh Prasanna M. Health dashboard design with clean navigation and intuitive progress tracking." />
+  <title>Gym Healthcare Fitness System — Case Study | Lokesh Prasanna M</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dark-mode.css" />
+  <style>
+    .cs-hero { padding: calc(var(--nav-height) + 64px) 0 64px; background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 40%, #cffafe 100%); position: relative; overflow: hidden; }
+    [data-theme="dark"] .cs-hero { background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(6,182,212,0.08)); }
+    .cs-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .cs-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; color: #059669; margin-bottom: 24px; transition: var(--transition-base); }
+    .cs-back:hover { gap: 12px; }
+    .cs-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; color: var(--text-primary); line-height: 1.15; margin-bottom: 16px; }
+    .cs-title .hl { background: linear-gradient(135deg,#059669,#06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .cs-meta-row { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+    .cs-meta-item label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+    .cs-meta-item span { font-weight: 600; color: var(--text-primary); font-size: 0.9375rem; }
+    .cs-hero-visual { background: white; border-radius: 24px; padding: 32px; box-shadow: 0 24px 60px rgba(16,185,129,0.18); text-align: center; font-size: 5rem; min-height: 280px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+    [data-theme="dark"] .cs-hero-visual { background: var(--bg-secondary); }
+    .cs-section { padding: 64px 0; }
+    .cs-section:nth-child(even) { background: var(--bg-secondary); }
+    .cs-h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .cs-h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; margin-top: 24px; }
+    .cs-p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+    .cs-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+    .cs-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 24px 0; }
+    .cs-card { background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: 16px; padding: 24px; transition: var(--transition-base); }
+    [data-theme="dark"] .cs-section:nth-child(even) .cs-card { background: var(--bg-tertiary); }
+    .cs-card:hover { box-shadow: var(--shadow-md); border-color: rgba(16,185,129,0.2); transform: translateY(-2px); }
+    .cs-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .cs-card h4 { font-weight: 700; font-size: 1rem; color: var(--text-primary); margin-bottom: 8px; }
+    .cs-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-screen { border-radius: 20px; padding: 48px 32px; text-align: center; font-size: 4rem; margin: 8px; border: 1px solid rgba(16,185,129,0.15); min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+    .cs-screen-label { font-size: 0.875rem; font-weight: 600; color: #059669; }
+    .cs-color-palette { display: flex; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
+    .cs-color { width: 64px; height: 64px; border-radius: 12px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font-size: 0.625rem; font-weight: 700; color: white; box-shadow: var(--shadow-sm); }
+    .cs-quote { border-left: 4px solid #059669; padding: 16px 24px; background: rgba(16,185,129,0.05); border-radius: 0 12px 12px 0; margin: 24px 0; font-style: italic; color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
+    .cs-tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .cs-tag { padding: 6px 16px; border-radius: 99px; font-size: 0.8125rem; font-weight: 500; background: rgba(16,185,129,0.08); color: #059669; border: 1px solid rgba(16,185,129,0.15); }
+    .cs-outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+    .cs-outcome-item { text-align: center; padding: 24px 16px; background: var(--bg-primary); border-radius: 16px; border: 1px solid var(--border-light); }
+    [data-theme="dark"] .cs-outcome-item { background: var(--bg-secondary); }
+    .cs-outcome-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; background: linear-gradient(135deg,#059669,#06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cs-outcome-label { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+    .cs-nav { display: flex; justify-content: space-between; padding: 32px 0; border-top: 1px solid var(--border-light); margin-top: 48px; flex-wrap: wrap; gap: 16px; }
+    @media(max-width:768px) { .cs-hero-inner { grid-template-columns: 1fr; } .cs-grid-2,.cs-grid-3 { grid-template-columns: 1fr; } .cs-outcome-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div id="cursor-glow"></div>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">LP.</a>
+      <div class="nav-actions">
+        <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
+          <span id="icon-moon">🌙</span>
+          <span id="icon-sun" style="display:none">☀️</span>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary" style="padding:10px 22px;font-size:0.875rem;">Hire Me</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cs-hero" aria-label="Case study overview">
+  <div class="container">
+    <a href="index.html#projects" class="cs-back page-load page-load-1">← Back to Projects</a>
+    <div class="cs-hero-inner">
+      <div class="page-load page-load-2">
+        <span class="section-label" style="color:#059669;background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.2);">HealthTech · Mobile Design</span>
+        <h1 class="cs-title">Gym Healthcare <span class="cs-title hl">Fitness System</span></h1>
+        <p class="cs-p">A mobile-first UI/UX case study focused on simplifying health tracking and workout management for gym users through clean, motivational design.</p>
+        <div class="cs-meta-row">
+          <div class="cs-meta-item"><label>Role</label><span>UI/UX Designer</span></div>
+          <div class="cs-meta-item"><label>Tool</label><span>Figma, Canva</span></div>
+          <div class="cs-meta-item"><label>Duration</label><span>3 Weeks</span></div>
+          <div class="cs-meta-item"><label>Platform</label><span>Mobile App</span></div>
+        </div>
+        <div class="cs-tag-list" style="margin-top:20px;">
+          <span class="cs-tag">Health Dashboard</span>
+          <span class="cs-tag">Workout UI</span>
+          <span class="cs-tag">Responsive Layout</span>
+          <span class="cs-tag">User-Friendly Design</span>
+        </div>
+      </div>
+      <div class="cs-hero-visual page-load page-load-3">
+        <div style="font-size:5rem;">🏋️</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:1.125rem;color:var(--text-primary);">Gym Healthcare System</div>
+        <div style="font-size:0.875rem;color:var(--text-muted);">Mobile · Dashboard · Progress Tracking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">01. Overview</span>
+      <h2 class="cs-h2">Project Overview</h2>
+      <p class="cs-p">The Gym Healthcare Fitness System is a mobile application designed to help gym-goers and fitness enthusiasts track their workouts, monitor health metrics, and stay motivated. The design prioritizes simplicity and clarity to prevent the "fitness app overwhelm" common in market leaders.</p>
+    </div>
+    <div class="cs-outcome-grid reveal">
+      <div class="cs-outcome-item"><div class="cs-outcome-num">60%</div><div class="cs-outcome-label">Reduced Information Clutter</div></div>
+      <div class="cs-outcome-item"><div class="cs-outcome-num">2x</div><div class="cs-outcome-label">User Engagement Increase</div></div>
+      <div class="cs-outcome-item"><div class="cs-outcome-num">92%</div><div class="cs-outcome-label">Task Completion Rate</div></div>
+      <div class="cs-outcome-item"><div class="cs-outcome-num">3wk</div><div class="cs-outcome-label">Design Timeline</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">02. Problem Statement</span>
+      <h2 class="cs-h2">The Problem</h2>
+      <div class="cs-quote">"Fitness applications often overwhelm users with excessive data, complex charts, and cluttered navigation, causing disengagement and poor habit formation."</div>
+      <p class="cs-p">Apps like MyFitnessPal and Nike Training Club pack in an enormous number of features that, while powerful, create a steep learning curve that discourages casual and beginner gym users. The result? High uninstall rates within the first week.</p>
+    </div>
+    <div class="cs-grid-2">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">😰</div>
+        <h4>User Pain Points</h4>
+        <ul style="list-style:disc;padding-left:20px;color:var(--text-muted);font-size:0.875rem;line-height:2;">
+          <li>Too many metrics displayed simultaneously</li>
+          <li>Complicated workout logging process</li>
+          <li>No motivational feedback or celebration</li>
+          <li>Difficult to understand health data visualizations</li>
+          <li>Poor readability in gym lighting conditions</li>
+        </ul>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🎯</div>
+        <h4>Design Goals</h4>
+        <ul style="list-style:disc;padding-left:20px;color:var(--text-muted);font-size:0.875rem;line-height:2;">
+          <li>Simplify data display to key metrics only</li>
+          <li>Create a 3-tap max workout logging flow</li>
+          <li>Design motivational progress celebrations</li>
+          <li>Use high-contrast UI for gym environments</li>
+          <li>Build an encouraging, positive tone of voice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">03. Research</span>
+      <h2 class="cs-h2">User Research &amp; Analysis</h2>
+    </div>
+    <div class="cs-grid-3">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">📊</div>
+        <h4>Usage Analysis</h4>
+        <p>Analyzed behavioral data patterns from 30 gym-goers. Found that 70% abandon tracking after day 14 due to friction in the logging process.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🏋️</div>
+        <h4>Contextual Observation</h4>
+        <p>Observed users in a gym environment to understand real-world usage patterns — sweaty hands, dim lighting, time pressure between sets.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🔬</div>
+        <h4>Competitor Analysis</h4>
+        <p>Evaluated MyFitnessPal, Jefit, and Strava. Found key opportunity: none offered a truly minimal, beginner-friendly first-time experience.</p>
+      </div>
+    </div>
+    <div class="cs-grid-2" style="margin-top:24px;">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">👤</div>
+        <h4>User Persona — Priya, 22</h4>
+        <p><strong>College student, casual gym-goer</strong></p>
+        <p>Goes to gym 3x/week. Wants to track progress without spending more than 30 seconds logging a workout. Gets discouraged by complex interfaces.</p>
+        <div class="cs-tag-list"><span class="cs-tag">Beginner</span><span class="cs-tag">Time-sensitive</span><span class="cs-tag">Motivation-driven</span></div>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🗺️</div>
+        <h4>User Journey Insights</h4>
+        <p><strong>Trigger:</strong> Decides to get fit, downloads app</p>
+        <p><strong>Frustration:</strong> Complex setup, too many options</p>
+        <p><strong>Resolution:</strong> Needs a guided, simple experience</p>
+        <p><strong>Goal:</strong> See meaningful progress with minimal effort</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WIREFRAMES -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">04. Wireframes</span>
+      <h2 class="cs-h2">Wireframes &amp; User Flow</h2>
+    </div>
+    <div class="cs-grid-3">
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f0fdf4,#d1fae5);">
+        <div style="font-size:2.5rem;">🏠</div>
+        <div class="cs-screen-label">Home Dashboard</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Today's Goal Ring · Quick Log · Summary</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f0fdf4,#d1fae5);">
+        <div style="font-size:2.5rem;">💪</div>
+        <div class="cs-screen-label">Workout Logger</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Exercise Cards · Sets/Reps · Timer</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f0fdf4,#d1fae5);">
+        <div style="font-size:2.5rem;">📈</div>
+        <div class="cs-screen-label">Progress Charts</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Weekly Graph · Streak · Achievements</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN SYSTEM -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">05. Design System</span>
+      <h2 class="cs-h2">Design System</h2>
+    </div>
+    <h3 class="cs-h3 reveal">Color Palette</h3>
+    <div class="cs-color-palette reveal">
+      <div class="cs-color" style="background:#059669;">Primary</div>
+      <div class="cs-color" style="background:#06b6d4;">Cyan</div>
+      <div class="cs-color" style="background:#0f172a;">Dark</div>
+      <div class="cs-color" style="background:#22c55e;">Success</div>
+      <div class="cs-color" style="background:#f59e0b;">Calories</div>
+      <div class="cs-color" style="background:#ef4444;">Cardio</div>
+      <div class="cs-color" style="background:#8b5cf6;">Strength</div>
+      <div class="cs-color" style="background:#f8faff;">Background</div>
+    </div>
+    <h3 class="cs-h3 reveal">Key Components</h3>
+    <div class="cs-tag-list reveal">
+      <span class="cs-tag">Goal Rings</span><span class="cs-tag">Workout Cards</span><span class="cs-tag">Progress Charts</span><span class="cs-tag">Achievement Badges</span><span class="cs-tag">Timer Widget</span><span class="cs-tag">Exercise Library</span><span class="cs-tag">Nutrition Log</span><span class="cs-tag">Rest Timer</span>
+    </div>
+  </div>
+</section>
+
+<!-- HIGH FIDELITY -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">06. High Fidelity Screens</span>
+      <h2 class="cs-h2">Final UI Screens</h2>
+    </div>
+    <div class="cs-grid-2">
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">
+        <div style="font-size:3.5rem;">🏠</div>
+        <div class="cs-screen-label">Home — Today's Overview</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Activity ring, macros, next workout suggestion</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#059669,#06b6d4);">
+        <div style="font-size:3.5rem;">💪</div>
+        <div class="cs-screen-label" style="color:white;">Active Workout Screen</div>
+        <div style="font-size:0.8125rem;color:rgba(255,255,255,0.8);text-align:center;">Current exercise, timer, rest button</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#cffafe,#a5f3fc);">
+        <div style="font-size:3.5rem;">📊</div>
+        <div class="cs-screen-label">Weekly Progress</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Bar charts, streak counter, personal records</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0);">
+        <div style="font-size:3.5rem;">🏆</div>
+        <div class="cs-screen-label">Achievements Screen</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Badge collection, milestones, social sharing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">07. Reflection</span>
+      <h2 class="cs-h2">Lessons Learned</h2>
+    </div>
+    <div class="cs-grid-3">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🎯</div>
+        <h4>Less is More</h4>
+        <p>Removing 70% of the available metrics from the home screen and surfacing only what matters improved task completion significantly.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🎭</div>
+        <h4>Emotion Drives Behavior</h4>
+        <p>Adding celebration moments (confetti on goal completion) and encouraging microcopy improved user motivation and retention.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🌗</div>
+        <h4>Dark Mode is Critical</h4>
+        <p>For fitness apps used in gyms, dark mode isn't optional — it's essential. 80% of test users in gyms switched to dark mode immediately.</p>
+      </div>
+    </div>
+    <div class="cs-nav">
+      <a href="case-study-1.html" class="btn btn-secondary">← Smart Learning Platform</a>
+      <a href="case-study-3.html" class="btn btn-primary">Next: Smart Shopping Trolley →</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">LP.</div>
+      <p class="footer-copy">© 2024 Lokesh Prasanna M · Case Study</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

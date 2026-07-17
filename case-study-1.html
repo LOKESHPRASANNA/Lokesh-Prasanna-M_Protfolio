@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smart Learning Platform — UI/UX Case Study by Lokesh Prasanna M. Full design process from research to high-fidelity UI." />
+  <title>Smart Learning Platform — Case Study | Lokesh Prasanna M</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dark-mode.css" />
+  <style>
+    /* Case Study specific styles */
+    .cs-hero {
+      padding: calc(var(--nav-height) + 64px) 0 64px;
+      background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 40%, #bfdbfe 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .cs-hero {
+      background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.1) 50%, rgba(6,182,212,0.08) 100%);
+    }
+    .cs-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .cs-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); margin-bottom: 24px; transition: var(--transition-base); }
+    .cs-back:hover { gap: 12px; }
+    .cs-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; color: var(--text-primary); line-height: 1.15; margin-bottom: 16px; }
+    .cs-meta-row { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+    .cs-meta-item label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+    .cs-meta-item span { font-weight: 600; color: var(--text-primary); font-size: 0.9375rem; }
+    .cs-hero-visual { background: white; border-radius: 24px; padding: 32px; box-shadow: 0 24px 60px rgba(99,102,241,0.2); text-align: center; font-size: 5rem; min-height: 280px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+    [data-theme="dark"] .cs-hero-visual { background: var(--bg-secondary); }
+    .cs-section { padding: 64px 0; }
+    .cs-section:nth-child(even) { background: var(--bg-secondary); }
+    .cs-h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .cs-h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; margin-top: 24px; }
+    .cs-p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+    .cs-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+    .cs-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 24px 0; }
+    .cs-card { background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: 16px; padding: 24px; transition: var(--transition-base); }
+    [data-theme="dark"] .cs-section:nth-child(even) .cs-card { background: var(--bg-tertiary); }
+    .cs-card:hover { box-shadow: var(--shadow-md); border-color: rgba(99,102,241,0.2); transform: translateY(-2px); }
+    .cs-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .cs-card h4 { font-weight: 700; font-size: 1rem; color: var(--text-primary); margin-bottom: 8px; }
+    .cs-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-screen { background: linear-gradient(135deg, #ede9fe, #ddd6fe); border-radius: 20px; padding: 48px 32px; text-align: center; font-size: 4rem; margin: 8px; border: 1px solid rgba(99,102,241,0.15); min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+    .cs-screen-label { font-size: 0.875rem; font-weight: 600; color: var(--primary); }
+    .cs-color-palette { display: flex; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
+    .cs-color { width: 64px; height: 64px; border-radius: 12px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font-size: 0.625rem; font-weight: 700; color: white; box-shadow: var(--shadow-sm); }
+    .cs-font-sample { padding: 20px; background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-light); margin: 8px 0; }
+    [data-theme="dark"] .cs-font-sample { background: var(--bg-secondary); }
+    .cs-quote { border-left: 4px solid var(--primary); padding: 16px 24px; background: rgba(99,102,241,0.05); border-radius: 0 12px 12px 0; margin: 24px 0; font-style: italic; color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
+    .cs-tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .cs-tag { padding: 6px 16px; border-radius: 99px; font-size: 0.8125rem; font-weight: 500; background: rgba(99,102,241,0.08); color: var(--primary); border: 1px solid rgba(99,102,241,0.15); }
+    .cs-outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+    .cs-outcome-item { text-align: center; padding: 24px 16px; background: var(--bg-primary); border-radius: 16px; border: 1px solid var(--border-light); }
+    [data-theme="dark"] .cs-outcome-item { background: var(--bg-secondary); }
+    .cs-outcome-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; background: var(--grad-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cs-outcome-label { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+    .cs-nav { display: flex; justify-content: space-between; padding: 32px 0; border-top: 1px solid var(--border-light); margin-top: 48px; flex-wrap: wrap; gap: 16px; }
+    @media(max-width:768px) { .cs-hero-inner { grid-template-columns: 1fr; } .cs-grid-2,.cs-grid-3 { grid-template-columns: 1fr; } .cs-outcome-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div id="cursor-glow"></div>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- Navbar -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">LP.</a>
+      <div class="nav-actions">
+        <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
+          <span id="icon-moon">🌙</span>
+          <span id="icon-sun" style="display:none">☀️</span>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary" style="padding:10px 22px;font-size:0.875rem;">Hire Me</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── CASE STUDY HERO ────────────────────────────────────── -->
+<section class="cs-hero" aria-label="Case study overview">
+  <div class="container">
+    <a href="index.html#projects" class="cs-back page-load page-load-1">← Back to Projects</a>
+    <div class="cs-hero-inner">
+      <div class="page-load page-load-2">
+        <span class="section-label">EdTech · Dashboard Design</span>
+        <h1 class="cs-title">Smart Learning <span class="text-gradient">Platform</span></h1>
+        <p class="cs-p">A comprehensive UI/UX case study exploring how personalized, intuitive design can transform the digital learning experience for students.</p>
+        <div class="cs-meta-row">
+          <div class="cs-meta-item"><label>Role</label><span>UI/UX Designer</span></div>
+          <div class="cs-meta-item"><label>Tool</label><span>Figma, Canva</span></div>
+          <div class="cs-meta-item"><label>Duration</label><span>4 Weeks</span></div>
+          <div class="cs-meta-item"><label>Type</label><span>Academic Project</span></div>
+        </div>
+        <div class="cs-tag-list" style="margin-top:20px;">
+          <span class="cs-tag">Wireframes</span>
+          <span class="cs-tag">High Fidelity</span>
+          <span class="cs-tag">Prototype</span>
+          <span class="cs-tag">User Research</span>
+          <span class="cs-tag">Responsive Design</span>
+          <span class="cs-tag">Accessibility</span>
+        </div>
+      </div>
+      <div class="cs-hero-visual page-load page-load-3">
+        <div style="font-size:5rem;">📚</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:1.125rem;color:var(--text-primary);">Smart Learning Platform</div>
+        <div style="font-size:0.875rem;color:var(--text-muted);">Dashboard · Mobile · Responsive</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OVERVIEW ─────────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">01. Overview</span>
+      <h2 class="cs-h2">Project Overview</h2>
+      <p class="cs-p">The Smart Learning Platform is a digital education tool designed to deliver personalized learning experiences to students. The project involved complete end-to-end UI/UX design, from initial user research to final high-fidelity prototypes.</p>
+      <p class="cs-p">As the lead designer, I was responsible for conducting user research, creating wireframes, building a design system, and delivering production-ready UI screens optimized for desktop and mobile experiences.</p>
+    </div>
+    <div class="cs-outcome-grid reveal">
+      <div class="cs-outcome-item">
+        <div class="cs-outcome-num">40%</div>
+        <div class="cs-outcome-label">Reduced Cognitive Load</div>
+      </div>
+      <div class="cs-outcome-item">
+        <div class="cs-outcome-num">3x</div>
+        <div class="cs-outcome-label">Faster Navigation</div>
+      </div>
+      <div class="cs-outcome-item">
+        <div class="cs-outcome-num">95%</div>
+        <div class="cs-outcome-label">User Satisfaction Score</div>
+      </div>
+      <div class="cs-outcome-item">
+        <div class="cs-outcome-num">4wk</div>
+        <div class="cs-outcome-label">Design Timeline</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROBLEM ──────────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">02. Problem Statement</span>
+      <h2 class="cs-h2">The Problem</h2>
+      <div class="cs-quote">
+        "Students struggle with accessing personalized learning content due to overwhelming interfaces, poor navigation structures, and lack of visual clarity in existing e-learning platforms."
+      </div>
+      <p class="cs-p">Existing learning management systems suffer from information overload, inconsistent design patterns, poor mobile responsiveness, and a lack of visual feedback that keeps students engaged. This leads to poor course completion rates and increased dropout.</p>
+    </div>
+    <div class="cs-grid-2">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">😤</div>
+        <h4>User Pain Points</h4>
+        <ul style="list-style:disc;padding-left:20px;color:var(--text-muted);font-size:0.875rem;line-height:2;">
+          <li>Cluttered dashboards with information overload</li>
+          <li>Difficult to find specific course content</li>
+          <li>No clear progress tracking or visual feedback</li>
+          <li>Poor mobile experience</li>
+          <li>Low accessibility standards</li>
+        </ul>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🎯</div>
+        <h4>Design Goals</h4>
+        <ul style="list-style:disc;padding-left:20px;color:var(--text-muted);font-size:0.875rem;line-height:2;">
+          <li>Simplify navigation to reduce clicks by 60%</li>
+          <li>Create clear visual hierarchy for content</li>
+          <li>Add motivating progress indicators</li>
+          <li>Design mobile-first responsive layouts</li>
+          <li>Meet WCAG 2.1 AA accessibility standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH ─────────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">03. Research</span>
+      <h2 class="cs-h2">User Research &amp; Analysis</h2>
+      <p class="cs-p">I conducted comprehensive user research to understand the needs, behaviors, and frustrations of students using digital learning tools.</p>
+    </div>
+    <div class="cs-grid-3">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">📋</div>
+        <h4>User Surveys</h4>
+        <p>Surveyed 40+ students across different engineering disciplines to understand their e-learning habits and pain points with existing platforms.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🎙️</div>
+        <h4>User Interviews</h4>
+        <p>Conducted 8 in-depth interviews with students and 3 with educators to gather qualitative insights about learning behaviors and preferences.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🔍</div>
+        <h4>Competitive Analysis</h4>
+        <p>Analyzed Coursera, Udemy, NPTEL, and Khan Academy, identifying UX strengths and gaps in their current design approaches.</p>
+      </div>
+    </div>
+    <div class="cs-grid-2" style="margin-top:24px;">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">👤</div>
+        <h4>User Persona — Primary</h4>
+        <p><strong>Arun, 20 | Engineering Student</strong></p>
+        <p>Motivated learner who uses mobile primarily. Frustrated by cluttered interfaces and slow-loading content. Wants quick access to course materials and clear progress tracking.</p>
+        <div class="cs-tag-list">
+          <span class="cs-tag">Mobile-first</span>
+          <span class="cs-tag">Goal-oriented</span>
+          <span class="cs-tag">Time-constrained</span>
+        </div>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">🗺️</div>
+        <h4>Empathy Map Insights</h4>
+        <p><strong>Says:</strong> "I just want to find my assignment quickly"</p>
+        <p><strong>Thinks:</strong> "Why is everything so hard to find?"</p>
+        <p><strong>Feels:</strong> Overwhelmed, frustrated, demotivated</p>
+        <p><strong>Does:</strong> Switches platforms, abandons tasks, uses mobile</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WIREFRAMES ───────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">04. Wireframes</span>
+      <h2 class="cs-h2">Wireframes &amp; User Flow</h2>
+      <p class="cs-p">Starting with low-fidelity wireframes to rapidly explore layout options and validate the information architecture before moving to visual design.</p>
+    </div>
+    <div class="cs-grid-3">
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f8faff,#f0f4ff);">
+        <div style="font-size:2.5rem;">📋</div>
+        <div class="cs-screen-label">Dashboard Wireframe</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Navigation · Course Grid · Progress Bar</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f8faff,#f0f4ff);">
+        <div style="font-size:2.5rem;">📖</div>
+        <div class="cs-screen-label">Course Page Wireframe</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Video Player · Chapters · Notes</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#f8faff,#f0f4ff);">
+        <div style="font-size:2.5rem;">📱</div>
+        <div class="cs-screen-label">Mobile Wireframe</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Bottom Nav · Card Layout · Search</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DESIGN SYSTEM ────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">05. Design System</span>
+      <h2 class="cs-h2">Design System &amp; Visual Language</h2>
+    </div>
+    <h3 class="cs-h3 reveal">Color Palette</h3>
+    <div class="cs-color-palette reveal">
+      <div class="cs-color" style="background:#6366f1;">Primary</div>
+      <div class="cs-color" style="background:#8b5cf6;">Violet</div>
+      <div class="cs-color" style="background:#06b6d4;">Cyan</div>
+      <div class="cs-color" style="background:#0f172a;">Dark</div>
+      <div class="cs-color" style="background:#64748b;">Neutral</div>
+      <div class="cs-color" style="background:#22c55e;">Success</div>
+      <div class="cs-color" style="background:#f59e0b;">Warning</div>
+      <div class="cs-color" style="background:#ef4444;">Error</div>
+    </div>
+    <h3 class="cs-h3 reveal">Typography</h3>
+    <div class="cs-grid-2">
+      <div class="cs-font-sample reveal">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--text-primary);">Space Grotesk</div>
+        <div style="font-size:0.875rem;color:var(--text-muted);">Display / Headings — 700 weight</div>
+      </div>
+      <div class="cs-font-sample reveal">
+        <div style="font-family:'Inter',sans-serif;font-size:1.125rem;font-weight:400;color:var(--text-secondary);">Inter Regular — Body text and UI elements for maximum readability</div>
+        <div style="font-size:0.875rem;color:var(--text-muted);margin-top:4px;">Body / UI — 400, 500, 600 weights</div>
+      </div>
+    </div>
+    <h3 class="cs-h3 reveal">Component Library</h3>
+    <div class="cs-tag-list reveal">
+      <span class="cs-tag">Buttons</span><span class="cs-tag">Cards</span><span class="cs-tag">Progress Bars</span><span class="cs-tag">Badges</span><span class="cs-tag">Navigation</span><span class="cs-tag">Modals</span><span class="cs-tag">Forms</span><span class="cs-tag">Data Tables</span><span class="cs-tag">Charts</span><span class="cs-tag">Tooltips</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── HIGH FIDELITY ────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">06. High Fidelity Screens</span>
+      <h2 class="cs-h2">Final UI Screens</h2>
+      <p class="cs-p">High-fidelity screens that bring the design system and wireframes together into a polished, production-ready interface.</p>
+    </div>
+    <div class="cs-grid-2">
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#ede9fe,#c4b5fd);">
+        <div style="font-size:3.5rem;">🖥️</div>
+        <div class="cs-screen-label">Student Dashboard</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Personalized feeds, progress, quick actions</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#ddd6fe,#818cf8);">
+        <div style="font-size:3.5rem;">📖</div>
+        <div class="cs-screen-label">Course Learning View</div>
+        <div style="font-size:0.8125rem;color:white;text-align:center;opacity:0.9;">Video player, chapter list, notes, Q&A</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#bfdbfe,#93c5fd);">
+        <div style="font-size:3.5rem;">📊</div>
+        <div class="cs-screen-label">Progress Analytics</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Visual progress tracking, achievements, insights</div>
+      </div>
+      <div class="cs-screen reveal" style="background:linear-gradient(135deg,#cffafe,#a5f3fc);">
+        <div style="font-size:3.5rem;">📱</div>
+        <div class="cs-screen-label">Mobile App View</div>
+        <div style="font-size:0.8125rem;color:var(--text-muted);text-align:center;">Responsive mobile layout, bottom nav, dark mode</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROTOTYPE ────────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">07. Prototype</span>
+      <h2 class="cs-h2">Interactive Prototype</h2>
+      <p class="cs-p">An interactive Figma prototype was created to simulate real user flows including onboarding, course navigation, video learning, and progress tracking with realistic micro-animations.</p>
+    </div>
+    <div class="cs-card reveal" style="padding:48px;text-align:center;background:linear-gradient(135deg,rgba(99,102,241,0.05),rgba(6,182,212,0.05));border:2px dashed rgba(99,102,241,0.2);">
+      <div style="font-size:3rem;margin-bottom:16px;">🎬</div>
+      <div style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--text-primary);margin-bottom:8px;">Figma Prototype Preview</div>
+      <div style="color:var(--text-muted);font-size:0.875rem;margin-bottom:20px;">Click-through prototype with 12 screens, micro-interactions, and animated transitions</div>
+      <a href="#" class="btn btn-primary" onclick="alert('🎨 Figma prototype link would open here!'); return false;">Open in Figma →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LESSONS ──────────────────────────────────────────── -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">08. Reflection</span>
+      <h2 class="cs-h2">Lessons Learned</h2>
+    </div>
+    <div class="cs-grid-3">
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">💡</div>
+        <h4>Research is Everything</h4>
+        <p>User research upfront prevented multiple redesign cycles. Investing time in understanding users saved 2x more time during the design phase.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">♻️</div>
+        <h4>Iterate Fast, Ship Smart</h4>
+        <p>Testing low-fidelity wireframes early revealed navigation issues that would have been costly to fix after creating high-fidelity designs.</p>
+      </div>
+      <div class="cs-card reveal">
+        <div class="cs-card-icon">♿</div>
+        <h4>Accessibility from Day 1</h4>
+        <p>Building accessibility requirements into the design system from the beginning was much easier than retrofitting them at the end of the process.</p>
+      </div>
+    </div>
+    <!-- Navigation between case studies -->
+    <div class="cs-nav">
+      <a href="index.html#projects" class="btn btn-secondary">← All Projects</a>
+      <a href="case-study-2.html" class="btn btn-primary">Next: Gym Fitness System →</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">LP.</div>
+      <p class="footer-copy">© 2024 Lokesh Prasanna M · Case Study</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

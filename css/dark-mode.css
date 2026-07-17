@@ -1,0 +1,184 @@
+/* ============================================================
+   DARK MODE — CSS Variable Overrides
+   ============================================================ */
+
+[data-theme="dark"] {
+  --bg-primary:    #0d0f1a;
+  --bg-secondary:  #131525;
+  --bg-tertiary:   #1a1d30;
+  --bg-glass:      rgba(19, 21, 37, 0.85);
+
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #64748b;
+
+  --border-light:  rgba(99, 102, 241, 0.15);
+  --border-glass:  rgba(99, 102, 241, 0.12);
+
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-xl:  0 32px 80px rgba(0, 0, 0, 0.65);
+
+  --grad-card:  linear-gradient(145deg, rgba(19,21,37,0.95), rgba(13,15,26,0.8));
+  --grad-hero:  linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(6,182,212,0.08) 100%);
+}
+
+/* ── Dark mode specifics ──────────────────────────────────── */
+[data-theme="dark"] #navbar.scrolled {
+  background: rgba(13, 15, 26, 0.92);
+  border-color: rgba(99,102,241,0.12);
+}
+
+[data-theme="dark"] .mobile-menu {
+  background: rgba(13, 15, 26, 0.97);
+  border-color: rgba(99,102,241,0.12);
+}
+
+[data-theme="dark"] .dark-toggle {
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+}
+
+[data-theme="dark"] .hero-grid {
+  background-image:
+    linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .blob { opacity: 0.2; }
+
+[data-theme="dark"] .floating-card {
+  background: rgba(19, 21, 37, 0.92);
+  border-color: rgba(99,102,241,0.2);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .about-card-main {
+  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.06));
+}
+
+[data-theme="dark"] .about-card-float {
+  background: var(--bg-secondary);
+  border-color: rgba(99,102,241,0.15);
+}
+
+[data-theme="dark"] .trait-item {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .trait-item:hover {
+  background: rgba(99,102,241,0.08);
+}
+
+[data-theme="dark"] .edu-card {
+  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.06));
+}
+
+[data-theme="dark"] .process-step {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .skill-item {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .skill-item:hover {
+  background: rgba(99,102,241,0.08);
+}
+
+[data-theme="dark"] .project-card {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .gallery-item {
+  border-color: rgba(99,102,241,0.12);
+}
+
+[data-theme="dark"] .tool-card {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .cert-card {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .timeline-entry {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .why-card {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .testimonial-card {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .contact-form-card {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea {
+  background: var(--bg-primary);
+  border-color: rgba(99,102,241,0.15);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .contact-item {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .social-btn {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] footer {
+  background: #07080f;
+}
+
+[data-theme="dark"] .stat-item {
+  border-color: rgba(99,102,241,0.12);
+}
+
+[data-theme="dark"] .shimmer {
+  background: linear-gradient(90deg, #1a1d30 25%, #222536 50%, #1a1d30 75%);
+  background-size: 200% 100%;
+}
+
+[data-theme="dark"] .timeline-tab {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .filter-btn,
+[data-theme="dark"] .skill-tab {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .tag {
+  background: rgba(19,21,37,0.85);
+}
+
+[data-theme="dark"] .step-number {
+  background: var(--bg-tertiary);
+}
+
+/* Dark mode transition */
+body, * {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Exceptions — don't transition these */
+.btn, a, button, .floating-card, .blob,
+.process-step, .tilt-card, .reveal, .reveal-left, .reveal-right {
+  transition: var(--transition-base);
+}

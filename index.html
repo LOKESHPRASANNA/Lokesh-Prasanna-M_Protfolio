@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lokesh Prasanna M — UI/UX Design Enthusiast &amp; Frontend Developer. Creative portfolio showcasing design thinking, visual design, and full-stack expertise." />
+  <meta name="keywords" content="UI/UX Designer, Frontend Developer, Figma, Wireframing, Prototyping, Portfolio, Hash Agile" />
+  <meta name="author" content="Lokesh Prasanna M" />
+  <meta property="og:title" content="Lokesh Prasanna M — UI/UX Designer Portfolio" />
+  <meta property="og:description" content="Designing Simple Experiences for Complex Problems" />
+  <meta property="og:type" content="website" />
+  <title>Lokesh Prasanna M — UI/UX Designer &amp; Frontend Developer</title>
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/dark-mode.css" />
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Cursor Glow -->
+<div id="cursor-glow"></div>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">LP.</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about"    class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#process"  class="nav-link" id="nav-process">Process</a></li>
+        <li><a href="#skills"   class="nav-link" id="nav-skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+        <li><a href="#gallery"  class="nav-link" id="nav-gallery">Gallery</a></li>
+        <li><a href="#tools"    class="nav-link" id="nav-tools">Tools</a></li>
+        <li><a href="#timeline" class="nav-link" id="nav-timeline">Timeline</a></li>
+        <li><a href="#contact"  class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
+          <span id="icon-moon">🌙</span>
+          <span id="icon-sun" style="display:none">☀️</span>
+        </button>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:0.875rem;">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+  <a href="#about"    class="mobile-link">About</a>
+  <a href="#process"  class="mobile-link">Process</a>
+  <a href="#skills"   class="mobile-link">Skills</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#gallery"  class="mobile-link">Gallery</a>
+  <a href="#tools"    class="mobile-link">Tools</a>
+  <a href="#certifications" class="mobile-link">Certifications</a>
+  <a href="#timeline" class="mobile-link">Timeline</a>
+  <a href="#contact"  class="mobile-link">Contact</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="hero-grid"></div>
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <!-- LEFT TEXT -->
+      <div class="hero-text">
+        <div class="hero-badge page-load page-load-1">
+          <span class="pulse-dot"></span>
+          Open to UI/UX &amp; Software Developer Opportunities
+        </div>
+
+        <h1 class="hero-title page-load page-load-2">
+          Designing <span class="highlight">Simple</span><br/>
+          Experiences for<br/>
+          <span class="highlight">Complex Problems</span>
+        </h1>
+
+        <p class="hero-subtitle page-load page-load-3">
+          Creative UI/UX enthusiast with a Full Stack Development background, passionate about crafting beautiful, intuitive, and user-centered digital experiences.
+        </p>
+
+        <div class="hero-roles page-load page-load-4">
+          <span class="role-pill design">🎨 UI/UX Enthusiast</span>
+          <span class="role-pill graphic">✏️ Graphic Designer</span>
+          <span class="role-pill dev">💻 Frontend Developer</span>
+          <span class="role-pill dev" style="color:var(--violet);background:rgba(139,92,246,0.06);border-color:rgba(139,92,246,0.2);">🛠️ Software Developer</span>
+        </div>
+
+        <div class="hero-cta page-load page-load-5">
+          <a href="#projects" class="btn btn-primary" id="hero-portfolio-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Portfolio
+          </a>
+          <a href="#" class="btn btn-secondary" id="hero-resume-btn" onclick="alert('📄 Resume download would be triggered here!'); return false;">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-cyan" id="hero-hire-btn">
+            ✨ Hire Me
+          </a>
+        </div>
+
+        <div class="hero-meta page-load page-load-6">
+          <span class="location-icon">📍</span>
+          <span>Dindigul, Tamil Nadu &nbsp;·&nbsp; B.E Computer &amp; Communication Engineering &nbsp;·&nbsp; CGPA 8.5</span>
+        </div>
+      </div>
+
+      <!-- RIGHT VISUAL -->
+      <div class="hero-visual page-load page-load-3">
+        <!-- Floating UI cards -->
+        <div class="floating-card fc-figma">
+          <div class="card-icon">🎨</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Tool</div>
+            <div>Figma Expert</div>
+          </div>
+        </div>
+
+        <div class="floating-card fc-react">
+          <div class="card-icon">⚛️</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Framework</div>
+            <div>React Developer</div>
+          </div>
+        </div>
+
+        <div class="floating-card fc-ux">
+          <div class="card-icon">🧠</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Method</div>
+            <div>Design Thinking</div>
+          </div>
+        </div>
+
+        <div class="floating-card fc-design">
+          <div class="card-icon">✨</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Focus</div>
+            <div>User Research</div>
+          </div>
+        </div>
+
+        <div class="floating-card fc-code">
+          <div class="card-icon">💻</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Stack</div>
+            <div>Full Stack Dev</div>
+          </div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="avatar-ring">
+          <div class="orbit-ring orbit-ring-1">
+            <div class="orbit-dot"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-2">
+            <div class="orbit-dot"></div>
+          </div>
+          <div class="avatar-circle" style="background:none;padding:0;overflow:hidden;">
+            <img src="assets/images/lokesh.jpg" alt="Lokesh Prasanna M" style="width:100%;height:130%;object-fit:cover;object-position:center top;border-radius:50%;margin-top:-15%;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="mouse"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     STATS
+═══════════════════════════════════════════════════════════ -->
+<section id="stats" aria-label="Statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number"><span class="count-up" data-target="3" data-suffix="+">0+</span></div>
+        <div class="stat-label">Design Projects</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.1s">
+        <div class="stat-number"><span class="count-up" data-target="5" data-suffix="+">0+</span></div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.2s">
+        <div class="stat-number"><span class="count-up" data-target="85" data-suffix="%">0%</span></div>
+        <div class="stat-label">CGPA (8.5/10)</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:0.3s">
+        <div class="stat-number"><span class="count-up" data-target="10" data-suffix="+">0+</span></div>
+        <div class="stat-label">Tools Mastered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════════════════ -->
+<section id="about" class="section-padding" aria-label="About Lokesh Prasanna">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left visual -->
+      <div class="about-image-wrap reveal-left">
+        <div class="about-card-main">
+          <div>
+            <div class="about-avatar-large" style="background:none;padding:0;overflow:hidden;">
+              <img src="assets/images/lokesh.jpg" alt="Lokesh Prasanna M" style="width:100%;height:130%;object-fit:cover;object-position:center top;border-radius:50%;margin-top:-15%;" />
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--text-primary);">Lokesh Prasanna M</div>
+              <div style="color:var(--text-secondary);font-size:0.9375rem;margin-top:4px;">UI/UX Designer &amp; Software Developer</div>
+              <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap;">
+                <span style="padding:4px 14px;border-radius:99px;background:rgba(99,102,241,0.12);color:var(--primary);font-size:0.75rem;font-weight:600;">Design</span>
+                <span style="padding:4px 14px;border-radius:99px;background:rgba(6,182,212,0.1);color:var(--cyan);font-size:0.75rem;font-weight:600;">Dev</span>
+                <span style="padding:4px 14px;border-radius:99px;background:rgba(139,92,246,0.1);color:var(--violet);font-size:0.75rem;font-weight:600;">Creative</span>
+              </div>
+            </div>
+          </div>
+          <!-- Floating info cards -->
+          <div class="about-card-float top-right" style="top:16px;right:16px;transform:rotate(3deg);">
+            <div class="about-info-card">
+              <div class="number">8.5</div>
+              <div class="label">CGPA</div>
+            </div>
+          </div>
+          <div class="about-card-float bottom-left" style="bottom:16px;left:16px;transform:rotate(-2deg);">
+            <div class="about-info-card">
+              <div class="number">3+</div>
+              <div class="label">Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right text -->
+      <div class="about-text reveal-right">
+        <div class="section-header">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Passionate About Creating <span class="text-gradient">Meaningful</span> Experiences</h2>
+        </div>
+
+        <p class="about-bio">
+          I'm Lokesh Prasanna M, a Computer & Communication Engineering student at VSB Engineering College with a deep passion for UI/UX design and frontend development. I believe that <strong>great design is invisible</strong> — when it works perfectly, users don't notice the interface, only the experience.
+        </p>
+        <p class="about-bio" style="margin-top:-8px;">
+          My dual background in design and full-stack development gives me a unique ability to bridge the gap between creative vision and technical implementation. I approach every problem with empathy, curiosity, and a commitment to pixel-perfect craftsmanship.
+        </p>
+
+        <div class="about-traits">
+          <div class="trait-item">
+            <span class="trait-icon">🎯</span>
+            <span class="trait-text">Passionate about UI/UX &amp; solving user problems</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">🧠</span>
+            <span class="trait-text">Believe great design is invisible</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">💻</span>
+            <span class="trait-text">Strong frontend knowledge (React, Angular, HTML/CSS)</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">🤝</span>
+            <span class="trait-text">Team player &amp; excellent communicator</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">⚡</span>
+            <span class="trait-text">Fast learner with high adaptability</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">💡</span>
+            <span class="trait-text">Creative thinker &amp; human-centered design advocate</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">🔍</span>
+            <span class="trait-text">Attention to detail &amp; pixel-perfect mindset</span>
+          </div>
+          <div class="trait-item">
+            <span class="trait-icon">🌐</span>
+            <span class="trait-text">Interested in accessibility &amp; inclusive design</span>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-details">
+            <div class="degree">B.E Computer &amp; Communication Engineering</div>
+            <div class="college">VSB Engineering College, Dindigul</div>
+            <div class="cgpa">CGPA: 8.5 / 10.0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DESIGN PROCESS
+═══════════════════════════════════════════════════════════ -->
+<section id="process" class="section-padding" aria-label="Design process">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">My Approach</span>
+      <h2 class="section-title">Design <span class="text-gradient">Thinking</span> Process</h2>
+      <p class="section-subtitle">A structured, human-centered framework I follow to create solutions that truly resonate with users.</p>
+    </div>
+
+    <div class="process-timeline stagger-children">
+      <div class="process-step shine-card">
+        <div class="step-number">01</div>
+        <div class="step-icon">👥</div>
+        <h3 class="step-title">Understand Users</h3>
+        <p class="step-desc">Empathize with target users through observation, interviews, and immersion in their environment.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">02</div>
+        <div class="step-icon">🔬</div>
+        <h3 class="step-title">User Research</h3>
+        <p class="step-desc">Gather qualitative & quantitative data via surveys, usability tests, and competitive analysis.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">03</div>
+        <div class="step-icon">🎯</div>
+        <h3 class="step-title">Problem Definition</h3>
+        <p class="step-desc">Synthesize research into a clear problem statement using affinity maps and user personas.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">04</div>
+        <div class="step-icon">✏️</div>
+        <h3 class="step-title">Wireframing</h3>
+        <p class="step-desc">Sketch low-fidelity layouts to explore structure, navigation, and content hierarchy rapidly.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">05</div>
+        <div class="step-icon">🎨</div>
+        <h3 class="step-title">High Fidelity UI</h3>
+        <p class="step-desc">Create pixel-perfect screens in Figma with full design systems, colors, and typography.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">06</div>
+        <div class="step-icon">⚡</div>
+        <h3 class="step-title">Prototype</h3>
+        <p class="step-desc">Build interactive prototypes with realistic micro-interactions and animated transitions.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">07</div>
+        <div class="step-icon">🧪</div>
+        <h3 class="step-title">User Testing</h3>
+        <p class="step-desc">Validate designs through usability sessions, A/B tests, and iterative feedback loops.</p>
+      </div>
+      <div class="process-step shine-card">
+        <div class="step-number">08</div>
+        <div class="step-icon">🚀</div>
+        <h3 class="step-title">Final Design</h3>
+        <p class="step-desc">Deliver developer-ready assets, design specs, and handoff documentation in Figma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SKILLS
+═══════════════════════════════════════════════════════════ -->
+<section id="skills" class="section-padding" aria-label="Skills">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title">My <span class="text-gradient">Skills</span> &amp; Proficiency</h2>
+      <p class="section-subtitle">A comprehensive skill set spanning design, frontend, and backend development.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="skills-tabs reveal">
+      <button class="skill-tab active" data-tab="uiux">🎨 UI/UX Design</button>
+      <button class="skill-tab" data-tab="graphic">✏️ Graphic Design</button>
+      <button class="skill-tab" data-tab="frontend">⚛️ Frontend</button>
+      <button class="skill-tab" data-tab="backend">🔧 Backend</button>
+      <button class="skill-tab" data-tab="tools">🛠️ Tools</button>
+    </div>
+
+    <!-- UI/UX Panel -->
+    <div class="skills-panel active" id="skills-uiux">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🎨</span> Figma</span>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">📐</span> Wireframing</span>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">⚡</span> Prototyping</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">📦</span> Design Systems</span>
+          <span class="skill-pct">82%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="82%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🗺️</span> User Flow</span>
+          <span class="skill-pct">84%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="84%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🏗️</span> Information Architecture</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">📱</span> Responsive Design</span>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">♿</span> Accessibility</span>
+          <span class="skill-pct">78%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="78%"></div></div>
+      </div>
+    </div>
+
+    <!-- Graphic Design Panel -->
+    <div class="skills-panel" id="skills-graphic">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🎨</span> Canva</span>
+          <span class="skill-pct">92%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="92%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🖼️</span> Adobe Photoshop</span>
+          <span class="skill-pct">78%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="78%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">✒️</span> Adobe Illustrator</span>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🔤</span> Typography</span>
+          <span class="skill-pct">86%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="86%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🌈</span> Color Theory</span>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">📢</span> Social Media Design</span>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🖼️</span> Poster Design</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🏷️</span> Banner Design</span>
+          <span class="skill-pct">87%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="87%"></div></div>
+      </div>
+    </div>
+
+    <!-- Frontend Panel -->
+    <div class="skills-panel" id="skills-frontend">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🌐</span> HTML5</span>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🎨</span> CSS3</span>
+          <span class="skill-pct">92%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="92%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">⚡</span> JavaScript</span>
+          <span class="skill-pct">82%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="82%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">⚛️</span> React</span>
+          <span class="skill-pct">78%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="78%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🔴</span> Angular</span>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="72%"></div></div>
+      </div>
+    </div>
+
+    <!-- Backend Panel -->
+    <div class="skills-panel" id="skills-backend">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">☕</span> Java</span>
+          <span class="skill-pct">82%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="82%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🌿</span> Spring Boot</span>
+          <span class="skill-pct">76%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="76%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🐬</span> MySQL</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🍃</span> MongoDB</span>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="72%"></div></div>
+      </div>
+    </div>
+
+    <!-- Tools Panel -->
+    <div class="skills-panel" id="skills-tools">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🔀</span> Git &amp; GitHub</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🏗️</span> Maven</span>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="72%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name"><span class="skill-emoji">🐘</span> Gradle</span>
+          <span class="skill-pct">68%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" data-width="68%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURED PROJECTS
+═══════════════════════════════════════════════════════════ -->
+<section id="projects" class="section-padding" aria-label="Featured projects">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Case Studies</span>
+      <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+      <p class="section-subtitle">Real-world design problems solved with research, empathy, and a pixel-perfect approach.</p>
+    </div>
+
+    <div class="projects-grid stagger-children">
+
+      <!-- Project 1 -->
+      <article class="project-card tilt-card shine-card" role="article" aria-label="Smart Learning Platform project">
+        <div class="project-thumb p1-bg">
+          <div class="project-thumb-inner">📚</div>
+          <div class="project-tags">
+            <span class="tag">UI/UX</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Education</span>
+          </div>
+          <div class="project-overlay">
+            <a href="case-study-1.html" class="overlay-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">EdTech · Dashboard Design</div>
+          <h3 class="project-title">Smart Learning Platform</h3>
+          <p class="project-problem">🔴 <strong>Problem:</strong> Students struggle with accessing personalized learning content intuitively.</p>
+          <p class="project-solution">✅ <strong>Solution:</strong> Designed a modern dashboard with intuitive navigation, adaptive layouts, responsive design, and a simplified learning flow that reduced cognitive load by 40%.</p>
+          <div class="project-highlights">
+            <span class="highlight-pill">Wireframes</span>
+            <span class="highlight-pill">Dashboard UI</span>
+            <span class="highlight-pill">Responsive</span>
+            <span class="highlight-pill">Accessibility</span>
+            <span class="highlight-pill">Prototype</span>
+          </div>
+          <div class="project-footer">
+            <a href="case-study-1.html" class="view-case-study">
+              View Full Case Study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div style="display:flex;gap:6px;">
+              <span class="tag">Figma</span>
+              <span class="tag">UX Research</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card tilt-card shine-card" role="article" aria-label="Gym Healthcare Fitness System project">
+        <div class="project-thumb p2-bg">
+          <div class="project-thumb-inner">🏋️</div>
+          <div class="project-tags">
+            <span class="tag">Mobile UI</span>
+            <span class="tag">Health</span>
+          </div>
+          <div class="project-overlay">
+            <a href="case-study-2.html" class="overlay-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">HealthTech · Mobile Design</div>
+          <h3 class="project-title">Gym Healthcare Fitness System</h3>
+          <p class="project-problem">🔴 <strong>Problem:</strong> Fitness applications often overwhelm users with cluttered data and complex navigation.</p>
+          <p class="project-solution">✅ <strong>Solution:</strong> Designed a clean health dashboard with simple navigation, intuitive progress tracking, and motivational visual cues that improved user engagement.</p>
+          <div class="project-highlights">
+            <span class="highlight-pill">Health Dashboard</span>
+            <span class="highlight-pill">Workout UI</span>
+            <span class="highlight-pill">Responsive</span>
+            <span class="highlight-pill">User-Friendly</span>
+          </div>
+          <div class="project-footer">
+            <a href="case-study-2.html" class="view-case-study">
+              View Full Case Study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div style="display:flex;gap:6px;">
+              <span class="tag">Figma</span>
+              <span class="tag">Mobile</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card tilt-card shine-card" role="article" aria-label="Smart Shopping Trolley project">
+        <div class="project-thumb p3-bg">
+          <div class="project-thumb-inner">🛒</div>
+          <div class="project-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">UX</span>
+          </div>
+          <div class="project-overlay">
+            <a href="case-study-3.html" class="overlay-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">RetailTech · Smart Interface</div>
+          <h3 class="project-title">Smart Shopping Trolley</h3>
+          <p class="project-problem">🔴 <strong>Problem:</strong> Long billing queues and difficult shopping experience reduce customer satisfaction.</p>
+          <p class="project-solution">✅ <strong>Solution:</strong> Designed a smart shopping interface that simplifies product browsing, real-time cart management, and a seamless self-checkout flow.</p>
+          <div class="project-highlights">
+            <span class="highlight-pill">Shopping UI</span>
+            <span class="highlight-pill">Mobile Design</span>
+            <span class="highlight-pill">Product Cards</span>
+            <span class="highlight-pill">Checkout Flow</span>
+          </div>
+          <div class="project-footer">
+            <a href="case-study-3.html" class="view-case-study">
+              View Full Case Study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div style="display:flex;gap:6px;">
+              <span class="tag">IoT</span>
+              <span class="tag">UX Research</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════════════════════ -->
+<section id="gallery" class="section-padding" aria-label="Portfolio gallery">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Portfolio Gallery</span>
+      <h2 class="section-title">Design <span class="text-gradient">Gallery</span></h2>
+      <p class="section-subtitle">A curated showcase of UI designs, wireframes, posters, and creative work.</p>
+    </div>
+
+    <!-- Filter -->
+    <div class="gallery-filter reveal">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="mobile">Mobile UI</button>
+      <button class="filter-btn" data-filter="web">Web Design</button>
+      <button class="filter-btn" data-filter="dashboard">Dashboards</button>
+      <button class="filter-btn" data-filter="wireframe">Wireframes</button>
+      <button class="filter-btn" data-filter="poster">Posters</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+    </div>
+
+    <div class="gallery-grid stagger-children">
+      <div class="gallery-item shine-card" data-category="mobile" data-title="Learning App — Mobile UI" data-desc="A clean, intuitive mobile UI for the Smart Learning Platform. Features personalized course feeds, progress tracking, and a bottom navigation bar optimized for one-handed use. Designed with WCAG-compliant contrast ratios and scalable typography.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#ede9fe,#c4b5fd);">📱</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">📱</div>
+          <div class="gh-title">Learning App — Mobile UI</div>
+          <div class="gh-cat">Mobile Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="web" data-title="Portfolio Landing Page" data-desc="A premium landing page design concept for a creative agency. Features hero animation, glassmorphism cards, and a sophisticated color palette. Built with accessibility and performance in mind.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#e0f2fe,#bae6fd);">🌐</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">🌐</div>
+          <div class="gh-title">Portfolio Landing Page</div>
+          <div class="gh-cat">Web Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="dashboard" data-title="Health Analytics Dashboard" data-desc="A comprehensive health monitoring dashboard with real-time vitals, workout history charts, and a personalized recommendation engine. Designed for both gym trainers and fitness enthusiasts.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">📊</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">📊</div>
+          <div class="gh-title">Health Analytics Dashboard</div>
+          <div class="gh-cat">Dashboard Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="wireframe" data-title="Shopping App Wireframes" data-desc="Low and mid-fidelity wireframes for the Smart Shopping Trolley application. Covers user onboarding, product scanning, cart management, and the self-checkout flow with clear information architecture.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">📋</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">📋</div>
+          <div class="gh-title">Shopping App Wireframes</div>
+          <div class="gh-cat">Wireframes</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="mobile" data-title="Fitness Tracker App" data-desc="A minimalist fitness tracking application with daily goal rings, workout cards, and a clean onboarding flow. Uses a calming green and white palette to reduce app-induced anxiety.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">🏃</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">🏃</div>
+          <div class="gh-title">Fitness Tracker App</div>
+          <div class="gh-cat">Mobile Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="poster" data-title="Tech Conference Poster" data-desc="A visually striking poster design for a technical conference, featuring bold typography, gradient accents, and a modern layout that captures attention while communicating key information clearly.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe);">🖼️</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">🖼️</div>
+          <div class="gh-title">Tech Conference Poster</div>
+          <div class="gh-cat">Poster Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="social" data-title="Social Media Campaign" data-desc="A cohesive social media design kit for a tech brand, featuring Instagram posts, stories, and LinkedIn banners. Maintains brand consistency across all formats while adapting to each platform's visual language.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#cffafe,#a5f3fc);">📸</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">📸</div>
+          <div class="gh-title">Social Media Campaign</div>
+          <div class="gh-cat">Social Media Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="dashboard" data-title="E-Commerce Admin Panel" data-desc="A feature-rich admin dashboard for an e-commerce platform, with real-time sales charts, inventory management, order tracking, and customer analytics. Designed for maximum efficiency and clarity.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#f3e8ff,#e9d5ff);">🛍️</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">🛍️</div>
+          <div class="gh-title">E-Commerce Admin Panel</div>
+          <div class="gh-cat">Dashboard Design</div>
+        </div>
+      </div>
+
+      <div class="gallery-item shine-card" data-category="web" data-title="SaaS Landing Page" data-desc="A conversion-optimized SaaS landing page with a bold hero, feature sections, pricing cards, and social proof. Designed to maximize sign-up rates while maintaining a premium, trustworthy aesthetic.">
+        <div class="gallery-thumb" style="background:linear-gradient(135deg,#d4f1d4,#bbf7d0);">💼</div>
+        <div class="gallery-hover">
+          <div class="gh-icon">💼</div>
+          <div class="gh-title">SaaS Landing Page</div>
+          <div class="gh-cat">Web Design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TOOLS
+═══════════════════════════════════════════════════════════ -->
+<section id="tools" class="section-padding" aria-label="Tools and technologies">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">My Toolkit</span>
+      <h2 class="section-title">Tools I <span class="text-gradient">Work With</span></h2>
+      <p class="section-subtitle">Industry-standard design and development tools that power my creative workflow.</p>
+    </div>
+
+    <div class="tools-grid stagger-children">
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🎨</div>
+        <div class="tool-name">Figma</div>
+        <div class="tool-type">UI/UX Design</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🎭</div>
+        <div class="tool-name">Canva</div>
+        <div class="tool-type">Graphic Design</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🖼️</div>
+        <div class="tool-name">Photoshop</div>
+        <div class="tool-type">Image Editing</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">✒️</div>
+        <div class="tool-name">Illustrator</div>
+        <div class="tool-type">Vector Design</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">⚛️</div>
+        <div class="tool-name">React</div>
+        <div class="tool-type">Frontend</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🔴</div>
+        <div class="tool-name">Angular</div>
+        <div class="tool-type">Frontend</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">☕</div>
+        <div class="tool-name">Java</div>
+        <div class="tool-type">Backend</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🌿</div>
+        <div class="tool-name">Spring Boot</div>
+        <div class="tool-type">Framework</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🔀</div>
+        <div class="tool-name">Git</div>
+        <div class="tool-type">Version Control</div>
+      </div>
+      <div class="tool-card shine-card">
+        <div class="tool-icon">🐬</div>
+        <div class="tool-name">MySQL</div>
+        <div class="tool-type">Database</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CERTIFICATIONS
+═══════════════════════════════════════════════════════════ -->
+<section id="certifications" class="section-padding" aria-label="Certifications">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Credentials</span>
+      <h2 class="section-title">Certifications &amp; <span class="text-gradient">Achievements</span></h2>
+      <p class="section-subtitle">Recognized learning milestones from leading technology organizations and platforms.</p>
+    </div>
+
+    <div class="certs-grid stagger-children">
+      <div class="cert-card shine-card">
+        <div class="cert-icon">☕</div>
+        <div class="cert-title">Programming in Java</div>
+        <div class="cert-issuer">NPTEL — IIT Certified</div>
+        <div class="cert-desc">Completed NPTEL online course on Java programming covering OOP, data structures, and algorithms. Recognized by IIT faculty.</div>
+      </div>
+      <div class="cert-card shine-card">
+        <div class="cert-icon">🔐</div>
+        <div class="cert-title">Cybersecurity Essentials</div>
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-desc">Comprehensive training in network security, threat analysis, and cybersecurity best practices from Cisco's global learning platform.</div>
+      </div>
+      <div class="cert-card shine-card">
+        <div class="cert-icon">🌱</div>
+        <div class="cert-title">Infosys Springboard</div>
+        <div class="cert-issuer">Infosys Learning Platform</div>
+        <div class="cert-desc">Completed multiple industry-relevant courses covering software development, design thinking, and emerging technologies.</div>
+      </div>
+      <div class="cert-card shine-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-title">GenAI Fluency</div>
+        <div class="cert-issuer">NASSCOM FutureSkills</div>
+        <div class="cert-desc">Certified in Generative AI concepts, prompt engineering, and responsible AI usage in product design and development workflows.</div>
+      </div>
+      <div class="cert-card shine-card">
+        <div class="cert-icon">📄</div>
+        <div class="cert-title">IEEE Conference Paper</div>
+        <div class="cert-issuer">IEEE Publication</div>
+        <div class="cert-desc">Published research paper at IEEE conference demonstrating academic rigor, technical writing skills, and commitment to scholarly contribution.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TIMELINE
+═══════════════════════════════════════════════════════════ -->
+<section id="timeline" class="section-padding" aria-label="Career timeline">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">My Journey</span>
+      <h2 class="section-title">Career <span class="text-gradient">Timeline</span></h2>
+      <p class="section-subtitle">From engineering student to design enthusiast — my story so far.</p>
+    </div>
+
+    <div class="timeline-tabs reveal">
+      <button class="timeline-tab active" data-tab="edu">🎓 Education</button>
+      <button class="timeline-tab" data-tab="projects">🚀 Projects</button>
+      <button class="timeline-tab" data-tab="certs">🏆 Certifications</button>
+    </div>
+
+    <!-- Education -->
+    <div class="timeline-content active" id="tl-edu">
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2022 — Present</div>
+        <h3 class="entry-title">B.E Computer &amp; Communication Engineering</h3>
+        <div class="entry-org">VSB Engineering College, Dindigul, Tamil Nadu</div>
+        <div class="entry-desc">Currently pursuing a 4-year engineering degree with a strong focus on software development, computer networks, and emerging technologies. CGPA: 8.5 / 10. Active participant in IEEE student chapter and college design club.</div>
+      </div>
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2020 — 2022</div>
+        <h3 class="entry-title">Higher Secondary Education (HSC)</h3>
+        <div class="entry-org">Tamil Nadu State Board</div>
+        <div class="entry-desc">Completed 12th grade with Computer Science as the primary subject. Developed early interest in programming and digital design during this period.</div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="timeline-content" id="tl-projects">
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2024</div>
+        <h3 class="entry-title">Smart Learning Platform</h3>
+        <div class="entry-org">UI/UX Design Project · Figma</div>
+        <div class="entry-desc">Designed a comprehensive e-learning platform with personalized dashboards, wireframes, and high-fidelity prototypes. Applied user research and usability testing methodologies.</div>
+      </div>
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2024</div>
+        <h3 class="entry-title">Gym Healthcare Fitness System</h3>
+        <div class="entry-org">Mobile UI Design · Figma + Canva</div>
+        <div class="entry-desc">Created a health and fitness mobile app interface with clean data visualization, workout tracking, and a user-friendly onboarding experience.</div>
+      </div>
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2026</div>
+        <h3 class="entry-title">Smart Shopping Trolley</h3>
+        <div class="entry-org">IoT + UI Design · IEEE Conference</div>
+        <div class="entry-desc">Developed the UI design for an IoT-based smart shopping trolley, enabling product scanning, real-time billing, and self-checkout. Published at IEEE conference.</div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="timeline-content" id="tl-certs">
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2024</div>
+        <h3 class="entry-title">NASSCOM GenAI Fluency</h3>
+        <div class="entry-org">NASSCOM FutureSkills Prime</div>
+        <div class="entry-desc">Earned certification in Generative AI fundamentals, covering LLMs, prompt engineering, and ethical AI applications in design and tech.</div>
+      </div>
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2023</div>
+        <h3 class="entry-title">Programming in Java — NPTEL</h3>
+        <div class="entry-org">IIT via NPTEL</div>
+        <div class="entry-desc">Completed 12-week online course on Java with IIT certification. Topics included OOP, exception handling, data structures, and multithreading.</div>
+      </div>
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2023</div>
+        <h3 class="entry-title">Cybersecurity Essentials</h3>
+        <div class="entry-org">Cisco Networking Academy</div>
+        <div class="entry-desc">Completed Cisco's cybersecurity program covering network threats, encryption, firewalls, and ethical hacking fundamentals.</div>
+      </div>
+      <div class="timeline-entry reveal">
+        <div class="entry-year">2023</div>
+        <h3 class="entry-title">Infosys Springboard Courses</h3>
+        <div class="entry-org">Infosys Learning Platform</div>
+        <div class="entry-desc">Completed multiple professional development courses on Infosys Springboard including design thinking, agile methodologies, and full-stack development.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHY HIRE ME
+═══════════════════════════════════════════════════════════ -->
+<section id="why-hire" class="section-padding" aria-label="Why hire me">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Why Choose Me</span>
+      <h2 class="section-title">What Makes Me <span class="text-gradient">Stand Out</span></h2>
+      <p class="section-subtitle">The qualities that make me a strong fit for the Hash Agile UI/UX Internship.</p>
+    </div>
+
+    <div class="why-grid stagger-children">
+      <div class="why-card shine-card">
+        <span class="why-icon">🎯</span>
+        <h3 class="why-title">Creative Problem Solver</h3>
+        <p class="why-desc">I approach every design challenge with a structured problem-solving mindset, combining creativity with analytical thinking.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">🧠</span>
+        <h3 class="why-title">Strong Design Thinking</h3>
+        <p class="why-desc">I follow a rigorous design thinking process — from empathy mapping to usability testing — to create truly user-centered solutions.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">💻</span>
+        <h3 class="why-title">Technical Background</h3>
+        <p class="why-desc">My full-stack development knowledge helps me create designs that are not just beautiful but technically feasible and implementation-ready.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">⚛️</span>
+        <h3 class="why-title">Frontend Dev Skills</h3>
+        <p class="why-desc">Proficient in React, Angular, HTML/CSS, and JavaScript — I can prototype and build real UI components, not just static mockups.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">⚡</span>
+        <h3 class="why-title">Fast Learner</h3>
+        <p class="why-desc">I quickly adapt to new tools, frameworks, and methodologies. I thrive in fast-paced environments and embrace continuous learning.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">💬</span>
+        <h3 class="why-title">Good Communication</h3>
+        <p class="why-desc">I can articulate design decisions clearly, present ideas confidently, and translate complex concepts into accessible language for all stakeholders.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">🤝</span>
+        <h3 class="why-title">Team Collaboration</h3>
+        <p class="why-desc">I work effectively in cross-functional teams, contributing to shared goals while respecting diverse perspectives and encouraging open communication.</p>
+      </div>
+      <div class="why-card shine-card">
+        <span class="why-icon">🔍</span>
+        <h3 class="why-title">Attention to Detail</h3>
+        <p class="why-desc">From pixel alignment to color contrast ratios, I maintain obsessive attention to detail to deliver polished, production-quality designs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="section-padding" aria-label="Testimonials">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">What Others Say</span>
+      <h2 class="section-title">Testimonials &amp; <span class="text-gradient">Feedback</span></h2>
+    </div>
+
+    <div class="testimonials-track reveal">
+      <div class="testimonial-card tilt-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Lokesh has an exceptional eye for design and a rare ability to think from the user's perspective. His work on the learning platform was both visually stunning and intuitively structured. A true design thinker."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:var(--grad-primary);">AK</div>
+          <div>
+            <div class="author-name">Dr. A. Kumar</div>
+            <div class="author-title">Professor, VSB Engineering College</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card tilt-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"What impresses me most about Lokesh is his ability to combine technical depth with design sensibility. He doesn't just make things look good — he makes them work better. A rare combination in today's industry."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:var(--grad-btn-cyan);">SM</div>
+          <div>
+            <div class="author-name">S. Mahesh</div>
+            <div class="author-title">Senior Developer &amp; Mentor</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card tilt-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Lokesh's design process is methodical and user-focused. He conducts proper research, creates well-structured wireframes, and delivers high-quality prototypes. His attention to accessibility is particularly commendable."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#ec4899,#f97316);">RP</div>
+          <div>
+            <div class="author-name">R. Priya</div>
+            <div class="author-title">UI/UX Lead, Design Club</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card tilt-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"As a project team member, Lokesh consistently goes beyond what's asked. His creative contributions elevated our project's visual quality, and his collaborative spirit made the entire development process enjoyable."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#22c55e,#06b6d4);">VR</div>
+          <div>
+            <div class="author-name">V. Raj</div>
+            <div class="author-title">Classmate &amp; Project Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-nav">
+      <button class="t-dot active" aria-label="Testimonial 1"></button>
+      <button class="t-dot" aria-label="Testimonial 2"></button>
+      <button class="t-dot" aria-label="Testimonial 3"></button>
+      <button class="t-dot" aria-label="Testimonial 4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════════════ -->
+<section id="contact" class="section-padding" aria-label="Contact">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Let's <span class="text-gradient">Work Together</span></h2>
+      <p class="section-subtitle">Ready to design something remarkable? I'd love to hear about your project.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left Info -->
+      <div class="contact-info reveal-left">
+        <p class="contact-intro">
+          I'm actively looking for UI/UX internship opportunities. Whether you have a project to discuss, want to collaborate, or just want to say hello — my inbox is always open.
+        </p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon">📧</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <a href="mailto:mlokeshprasanna@gmail.com" class="ci-value">mlokeshprasanna@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📱</div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <a href="tel:+919566864218" class="ci-value">+91 9566864218</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-value">Dindigul, Tamil Nadu, India</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🎓</div>
+            <div>
+              <div class="ci-label">College</div>
+              <div class="ci-value">VSB Engineering College</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:var(--space-lg);">
+          <div style="font-size:0.875rem;font-weight:600;color:var(--text-primary);margin-bottom:var(--space-md);">Connect With Me</div>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="LinkedIn" title="LinkedIn">in</a>
+            <a href="#" class="social-btn" aria-label="GitHub" title="GitHub">GH</a>
+            <a href="#" class="social-btn" aria-label="Behance" title="Behance">Be</a>
+            <a href="#" class="social-btn" aria-label="Dribbble" title="Dribbble">Dr</a>
+            <a href="#" class="social-btn" aria-label="Email" title="Email">✉️</a>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="alert('📄 Resume download would be triggered here!'); return false;">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+
+      <!-- Right Form -->
+      <div class="reveal-right">
+        <div class="contact-form-card">
+          <h3 style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;color:var(--text-primary);margin-bottom:var(--space-lg);">Send Me a Message ✨</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Name</label>
+                <input class="form-input" type="text" id="contact-name" name="name" placeholder="John Doe" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address</label>
+                <input class="form-input" type="email" id="contact-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject</label>
+              <input class="form-input" type="text" id="contact-subject" name="subject" placeholder="UI/UX Internship Opportunity" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Message</label>
+              <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="contact-submit">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">LP.</div>
+      <p class="footer-copy">© 2024 Lokesh Prasanna M · Crafted with ❤️ &amp; attention to detail</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/particles.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
